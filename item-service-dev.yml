@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: item-service
+
+#server:
+#  port: 8001
+
+# eureka 客户端配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka
+
+---
+# 配置信息，在程序启动时 按需传入参数，指定此次启动使用那一段配置信息。--spring.profiles.active=item1
+spring:
+  profiles: item1
+
+server:
+  port: 8001
+
+---
+spring:
+  profiles: item2
+
+server:
+  port: 8002
